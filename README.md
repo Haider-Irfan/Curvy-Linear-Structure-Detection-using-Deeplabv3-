@@ -2,8 +2,7 @@
 # Curvy-Linear-Structure-Detection-using-Deeplabv3-
 Semantic segmentation of cracks in concrete structures using DeepLabV3+ (ResNet50V2 backbone) — 98% accuracy, 0.83 test IoU. Built with TensorFlow/KerasCV.
 
-Overview
-
+Overview:
 Manual inspection of cracks in infrastructure is time-consuming, expensive, and prone to human error. This project automates crack detection using a DeepLabV3+ semantic segmentation model, classifying every pixel in a concrete surface image as either background or crack.
 
 <img width="2968" height="766" alt="test_combo_0000" src="https://github.com/user-attachments/assets/f848aad1-49d3-4df5-bb63-fe81783edaec" />
@@ -12,25 +11,27 @@ Manual inspection of cracks in infrastructure is time-consuming, expensive, and 
 
 <img width="2968" height="766" alt="test_combo_0010" src="https://github.com/user-attachments/assets/b3c6fa57-1ae5-4f18-82fb-30c7a1806ea9" />
 
-Key Results
+Key Results:
+
 Metric	Value
 Test Accuracy	98%
 Test Mean IoU	0.8324
 Training Time	~1 hour (single T4 GPU)
 Background Class F1	0.9816
 Crack Class F1	0.8362
+
 Table of Contents
 Problem Statement
 Dataset
 Model Architecture
 Training Configuration
+
 Results
 Limitations & Future Work
 Tech Stack
 Project Structure
 Getting Started
-Usage
-License
+
 Problem Statement
 
 Manual crack inspection on infrastructure (bridges, pavements, buildings) is slow, costly, and inconsistent across inspectors. This project develops an automated, deep learning-based system for pixel-level crack segmentation that generalizes to unseen concrete surface images.

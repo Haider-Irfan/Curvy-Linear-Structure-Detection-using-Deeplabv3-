@@ -7,30 +7,28 @@ Manual inspection of cracks in infrastructure is time-consuming, expensive, and 
 
 <img width="2968" height="766" alt="test_combo_0000" src="https://github.com/user-attachments/assets/f848aad1-49d3-4df5-bb63-fe81783edaec" />
 
-<img width="2968" height="766" alt="test_combo_0038" src="https://github.com/user-attachments/assets/642be863-b39a-44ac-83c6-cd3af9807217" />
 
-<img width="2968" height="766" alt="test_combo_0010" src="https://github.com/user-attachments/assets/b3c6fa57-1ae5-4f18-82fb-30c7a1806ea9" />
 
 Key Results:
 
-Metric	Value
-Test Accuracy	98%
-Test Mean IoU	0.8324
-Training Time	~1 hour (single T4 GPU)
-Background Class F1	0.9816
-Crack Class F1	0.8362
+Metric	Value: 
+1. Test Accuracy	98%
+2. Test Mean IoU	0.8324
+3. Training Time	~1 hour (single T4 GPU)
+4. Background Class F1	0.9816
+5. Crack Class F1	0.8362
 
 Table of Contents
-Problem Statement
-Dataset
-Model Architecture
-Training Configuration
+1. Problem Statement
+2. Dataset
+3. Model Architecture
+4. Training Configuration
 
 Results
-Limitations & Future Work
-Tech Stack
-Project Structure
-Getting Started
+1. Limitations & Future Work
+2. Tech Stack
+3. Project Structure
+4. Getting Started
 
 Problem Statement
 
@@ -38,16 +36,16 @@ Manual crack inspection on infrastructure (bridges, pavements, buildings) is slo
 
 Objectives
 
-Develop an automated crack detection system
-Achieve high accuracy in pixel-level crack segmentation
-Build a model that generalizes well to unseen data
-Provide detailed performance metrics and visualizations
-Dataset
-Total images: 5,185 concrete surface images with binary crack masks (post-augmentation)
-Split: 3,111 train / 1,037 validation / 1,037 test
-Image size: 256×256 (resized to 128×128 for model input)
-Classes: 2 — Background, Crack
-Format: RGB images with binary segmentation masks
+1. Develop an automated crack detection system
+2. Achieve high accuracy in pixel-level crack segmentation
+3. Build a model that generalizes well to unseen data
+4. Provide detailed performance metrics and visualizations
+5. Dataset
+6. Total images: 5,185 concrete surface images with binary crack masks (post-augmentation)
+7. Split: 3,111 train / 1,037 validation / 1,037 test
+8. Image size: 256×256 (resized to 128×128 for model input)
+9. Classes: 2 — Background, Crack
+10. Format: RGB images with binary segmentation masks
 dataset/
 ├── train/
 │   ├── images/
@@ -71,18 +69,18 @@ Total parameters: 39,186,624
 
 Key components
 
-Encoder: ResNet50V2 for feature extraction
-ASPP (Atrous Spatial Pyramid Pooling) for multi-scale context aggregation
-Decoder: upsampling with skip connections
-Output head: pixel-wise binary classification
-Training Configuration
-Setting	Value
-Optimizer	Adam
-Learning Rate	1e-4
-Batch Size	16
-Epochs	10
-Loss Function	Sparse Categorical Crossentropy
-Metrics	Accuracy, Mean IoU, Betti number, clDice
+1. Encoder: ResNet50V2 for feature extraction
+2. ASPP (Atrous Spatial Pyramid Pooling) for multi-scale context aggregation
+3. Decoder: upsampling with skip connections
+4. Output head: pixel-wise binary classification
+5. Training Configuration
+6. Setting	Value
+7. Optimizer	Adam
+8. Learning Rate	1e-4
+9. Batch Size	16
+10. Epochs	10
+11. Loss Function	Sparse Categorical Crossentropy
+12. Metrics	Accuracy, Mean IoU, Betti number, clDice
 
 Data augmentation: random horizontal flip, random rotation, random brightness (±20%), random contrast (±20%)
 
@@ -92,16 +90,25 @@ Results
 
 Final training metrics (epoch 10)
 
-Split	Loss	Accuracy	Mean IoU
-Training	0.0381	98%	0.8553
-Validation	0.0426	98%	0.8334
-Test	0.0437	98%	0.8324
+
+1. Split	Loss	Accuracy	Mean IoU
+2. Training	0.0381	98%	0.8553
+3. Validation	0.0426	98%	0.8334
+4. Test	0.0437	98%	0.8324
+
+<img width="2968" height="766" alt="test_combo_0038" src="https://github.com/user-attachments/assets/642be863-b39a-44ac-83c6-cd3af9807217" />
+
+
+<img width="2968" height="766" alt="test_combo_0010" src="https://github.com/user-attachments/assets/b3c6fa57-1ae5-4f18-82fb-30c7a1806ea9" />
 
 Per-class test performance
 
 Class	Precision	Recall	F1-Score
 Background	99%	99%	0.9816
 Crack	84%	83%	0.8362
+
+
+
 
 Qualitative observations: the model reliably detects visible cracks across varying lighting conditions, with weaker performance on very thin cracks (< 2–3 pixels wide).
 

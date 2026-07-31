@@ -1,3 +1,4 @@
+
 # Curvy-Linear-Structure-Detection-using-Deeplabv3-
 Semantic segmentation of cracks in concrete structures using DeepLabV3+ (ResNet50V2 backbone) — 98% accuracy, 0.83 test IoU. Built with TensorFlow/KerasCV.
 
@@ -6,6 +7,8 @@ Overview
 Manual inspection of cracks in infrastructure is time-consuming, expensive, and prone to human error. This project automates crack detection using a DeepLabV3+ semantic segmentation model, classifying every pixel in a concrete surface image as either background or crack.
 
 <img width="2968" height="766" alt="test_combo_0000" src="https://github.com/user-attachments/assets/f848aad1-49d3-4df5-bb63-fe81783edaec" />
+<img width="2968" height="766" alt="test_combo_0038" src="https://github.com/user-attachments/assets/642be863-b39a-44ac-83c6-cd3af9807217" />
+<img width="2968" height="766" alt="test_combo_0010" src="https://github.com/user-attachments/assets/b3c6fa57-1ae5-4f18-82fb-30c7a1806ea9" />
 
 Key Results
 Metric	Value
@@ -58,6 +61,10 @@ Backbone: ResNet50V2 (pretrained on ImageNet)
 Input shape: 128×128×3
 Output shape: 256×256×2
 Total parameters: 39,186,624
+
+<img width="416" height="222" alt="image" src="https://github.com/user-attachments/assets/a49a0e63-719e-4abd-9264-575b2e72a7a5" />
+
+
 
 Key components
 

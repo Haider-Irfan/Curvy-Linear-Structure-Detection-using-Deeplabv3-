@@ -7,7 +7,9 @@ Overview
 Manual inspection of cracks in infrastructure is time-consuming, expensive, and prone to human error. This project automates crack detection using a DeepLabV3+ semantic segmentation model, classifying every pixel in a concrete surface image as either background or crack.
 
 <img width="2968" height="766" alt="test_combo_0000" src="https://github.com/user-attachments/assets/f848aad1-49d3-4df5-bb63-fe81783edaec" />
+
 <img width="2968" height="766" alt="test_combo_0038" src="https://github.com/user-attachments/assets/642be863-b39a-44ac-83c6-cd3af9807217" />
+
 <img width="2968" height="766" alt="test_combo_0010" src="https://github.com/user-attachments/assets/b3c6fa57-1ae5-4f18-82fb-30c7a1806ea9" />
 
 Key Results
